@@ -1,0 +1,101 @@
+[
+    {
+        "id": "1",
+        "name": "Lunch",
+        "amount": 150.0,
+        "category": "Food",
+        "date": "2026-11-16",
+        "type": "Expense",
+        "payment": "Cash"
+    },
+    {
+        "id": "2",
+        "name": "Bus Fare",
+        "amount": 50.0,
+        "category": "Transport",
+        "date": "2026-11-16",
+        "type": "Expense",
+        "payment": "Cash"
+    },
+    {
+        "id": "3",
+        "name": "Part-time Work",
+        "amount": 2500.0,
+        "category": "Freelance",
+        "date": "2026-11-16",
+        "type": "Income",
+        "payment": "Bank Transfer"
+    },
+    {
+        "id": "4",
+        "name": "Notebook",
+        "amount": 120.0,
+        "category": "Education",
+        "date": "2026-11-15",
+        "type": "Expense",
+        "payment": "Cash"
+    },
+    {
+        "id": "5",
+        "name": "Mobile Recharge",
+        "amount": 100.0,
+        "category": "Bills",
+        "date": "2026-11-14",
+        "type": "Expense",
+        "payment": "Mobile Banking"
+    },
+    {
+        "id": "6",
+        "name": "Groceries",
+        "amount": 650.0,
+        "category": "Food",
+        "date": "2026-11-13",
+        "type": "Expense",
+        "payment": "Mobile Banking"
+    },
+    {
+        "id": "7",
+        "name": "Tuition",
+        "amount": 3000.0,
+        "category": "Salary",
+        "date": "2026-11-12",
+        "type": "Income",
+        "payment": "Bank Transfer"
+    },
+    {
+        "id": "8",
+        "name": "Medicine",
+        "amount": 220.0,
+        "category": "Health",
+        "date": "2026-11-11",
+        "type": "Expense",
+        "payment": "Cash"
+    },
+    {
+        "id": "9",
+        "name": "Movie Ticket",
+        "amount": 350.0,
+        "category": "Entertainment",
+        "date": "2026-11-10",
+        "type": "Expense",
+        "payment": "Card"
+    },
+    {
+        "id": "10",
+        "name": "T-shirt",
+        "amount": 700.0,
+        "category": "Shopping",
+        "date": "2026-11-09",
+        "type": "Expense",
+        "payment": "Mobile Banking"
+    },
+    {
+        "id": "11",
+        "name": "shirt",
+        "amount": 100.0,
+        "category": "Food",
+        "date": "2026-11-16",
+        "type": "Expense",
+        "payment": "Cash"
+    }
+]
