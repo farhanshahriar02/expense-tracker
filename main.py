@@ -32,16 +32,16 @@ class ExpenseTrackerApp:
         dash_frame = tk.LabelFrame(self.root, text="Dashboard", bg="#f4f4f4", font=("Arial", 10, "bold"))
         dash_frame.pack(fill="x", padx=10, pady=5)
 
-        self.lbl_income = tk.Label(dash_frame, text="Total Income: ৳0.00", bg="#f4f4f4", font=("Arial", 11))
+        self.lbl_income = tk.Label(dash_frame, text="Total Income: 0.00", bg="#f4f4f4", font=("Arial", 11))
         self.lbl_income.grid(row=0, column=0, padx=20, pady=10)
 
-        self.lbl_expense = tk.Label(dash_frame, text="Total Expense: ৳0.00", bg="#f4f4f4", font=("Arial", 11))
+        self.lbl_expense = tk.Label(dash_frame, text="Total Expense: 0.00", bg="#f4f4f4", font=("Arial", 11))
         self.lbl_expense.grid(row=0, column=1, padx=20, pady=10)
 
-        self.lbl_balance = tk.Label(dash_frame, text="Balance: ৳0.00", bg="#f4f4f4", font=("Arial", 11))
+        self.lbl_balance = tk.Label(dash_frame, text="Balance: 0.00", bg="#f4f4f4", font=("Arial", 11))
         self.lbl_balance.grid(row=0, column=2, padx=20, pady=10)
 
-        self.lbl_month_exp = tk.Label(dash_frame, text="This Month Expense: ৳0.00", bg="#f4f4f4", font=("Arial", 11))
+        self.lbl_month_exp = tk.Label(dash_frame, text="This Month Expense: 0.00", bg="#f4f4f4", font=("Arial", 11))
         self.lbl_month_exp.grid(row=0, column=3, padx=20, pady=10)
 
         # --- TRANSACTION DETAILS FRAME ---
@@ -53,7 +53,7 @@ class ExpenseTrackerApp:
         self.ent_name = tk.Entry(input_frame, width=20)
         self.ent_name.grid(row=1, column=0, padx=10, pady=5)
 
-        tk.Label(input_frame, text="Amount (৳)", bg="#f4f4f4").grid(row=0, column=1, sticky="w", padx=10, pady=5)
+        tk.Label(input_frame, text="Amount ()", bg="#f4f4f4").grid(row=0, column=1, sticky="w", padx=10, pady=5)
         self.ent_amount = tk.Entry(input_frame, width=15)
         self.ent_amount.grid(row=1, column=1, padx=10, pady=5)
 
@@ -100,7 +100,7 @@ class ExpenseTrackerApp:
         table_frame = tk.Frame(self.root)
         table_frame.pack(fill="both", expand=True, padx=10, pady=5)
 
-        columns = ("ID", "Name", "Amount (৳)", "Category", "Date", "Type", "Payment Method")
+        columns = ("ID", "Name", "Amount ()", "Category", "Date", "Type", "Payment Method")
         self.tree = ttk.Treeview(table_frame, columns=columns, show="headings")
         
         for col in columns:
@@ -122,7 +122,7 @@ class ExpenseTrackerApp:
         budget_frame = tk.LabelFrame(self.root, text="Budget and Analysis", bg="#f4f4f4", font=("Arial", 10, "bold"))
         budget_frame.pack(fill="x", padx=10, pady=10)
 
-        tk.Label(budget_frame, text="Monthly budget (৳):", bg="#f4f4f4").pack(side="left", padx=5, pady=10)
+        tk.Label(budget_frame, text="Monthly budget ():", bg="#f4f4f4").pack(side="left", padx=5, pady=10)
         self.ent_budget = tk.Entry(budget_frame, width=15)
         self.ent_budget.pack(side="left", padx=5)
         
@@ -136,17 +136,17 @@ class ExpenseTrackerApp:
 
     def update_dashboard(self):
         income, expense, balance, month_exp = self.manager.get_dashboard_stats()
-        self.lbl_income.config(text=f"Total Income: ৳{income:.2f}")
-        self.lbl_expense.config(text=f"Total Expense: ৳{expense:.2f}")
-        self.lbl_balance.config(text=f"Balance: ৳{balance:.2f}")
-        self.lbl_month_exp.config(text=f"This Month Expense: ৳{month_exp:.2f}")
+        self.lbl_income.config(text=f"Total Income: {income:.2f}")
+        self.lbl_expense.config(text=f"Total Expense: {expense:.2f}")
+        self.lbl_balance.config(text=f"Balance: {balance:.2f}")
+        self.lbl_month_exp.config(text=f"This Month Expense: {month_exp:.2f}")
         
         # Budget limit check
         if self.budget.monthly_budget > 0:
             if month_exp > self.budget.monthly_budget:
-                self.lbl_budget_status.config(text=f"⚠️ Exceeded by ৳{month_exp - self.budget.monthly_budget:.2f}!", fg="red")
+                self.lbl_budget_status.config(text=f" Exceeded by {month_exp - self.budget.monthly_budget:.2f}!", fg="red")
             else:
-                self.lbl_budget_status.config(text=f"Remaining: ৳{self.budget.monthly_budget - month_exp:.2f}", fg="green")
+                self.lbl_budget_status.config(text=f"Remaining: {self.budget.monthly_budget - month_exp:.2f}", fg="green")
         else:
             self.lbl_budget_status.config(text="No monthly budget set.", fg="black")
 
@@ -264,14 +264,14 @@ class ExpenseTrackerApp:
         summary = self.manager.get_analysis()
         
         analysis_text = f"Total Transactions: {summary['count']}\n\n"
-        analysis_text += f"Total Income: ৳{summary['total_income']:.2f}\n"
-        analysis_text += f"Total Expense: ৳{summary['total_expense']:.2f}\n"
-        analysis_text += f"Average Expense: ৳{summary['average_expense']:.2f}\n"
-        analysis_text += f"Highest Single Expense: ৳{summary['highest_expense']:.2f}\n\n"
+        analysis_text += f"Total Income: {summary['total_income']:.2f}\n"
+        analysis_text += f"Total Expense: {summary['total_expense']:.2f}\n"
+        analysis_text += f"Average Expense: {summary['average_expense']:.2f}\n"
+        analysis_text += f"Highest Single Expense: {summary['highest_expense']:.2f}\n\n"
         
         analysis_text += "--- Category-wise Expenses ---\n"
         for cat, total in summary['category_totals'].items():
-            analysis_text += f"{cat}: ৳{total:.2f}\n"
+            analysis_text += f"{cat}: {total:.2f}\n"
             
         messagebox.showinfo("NumPy Analysis Report", analysis_text)
 
