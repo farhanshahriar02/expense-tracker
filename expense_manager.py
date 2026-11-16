@@ -1,7 +1,3 @@
-"""
-expense_manager.py
-Coordinates records, operations, and file handling.
-"""
 from expense import Expense
 from file_handler import FileHandler
 from analysis import summarize_expenses

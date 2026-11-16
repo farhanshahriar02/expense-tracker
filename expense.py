@@ -1,7 +1,3 @@
-"""
-expense.py
-Data model class for a transaction.
-"""
 
 class Expense:
     CATEGORIES = ("Food", "Transport", "Bills", "Shopping", "Health", "Education", "Entertainment", "Salary", "Freelance", "Other")

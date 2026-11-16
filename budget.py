@@ -1,7 +1,3 @@
-"""
-budget.py
-Handles budget setting and limit checking.
-"""
 import json
 import os
 

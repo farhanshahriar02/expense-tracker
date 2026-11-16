@@ -1,7 +1,3 @@
-"""
-analysis.py
-NumPy-based numerical analysis for expenses.
-"""
 import numpy as np
 
 def summarize_expenses(expenses: list) -> dict:

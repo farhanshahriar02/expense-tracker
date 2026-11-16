@@ -1,7 +1,3 @@
-"""
-file_handler.py
-Handles JSON file save/load with exception handling.
-"""
 import json
 import os
 
