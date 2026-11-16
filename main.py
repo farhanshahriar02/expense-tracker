@@ -1,7 +1,3 @@
-"""
-main.py
-Personal Expense Tracker - GUI Version
-"""
 import tkinter as tk
 from tkinter import ttk, messagebox
 from datetime import datetime
